@@ -490,7 +490,7 @@ https://github.com/yahoo/pure/blob/master/LICENSE.md
 .chat__wrapper {
   position: relative;
   width: 900px;
-  margin: 100px auto 0 auto; }
+  margin: 100px auto 30px auto; }
 
 .chat__members {
   left: -130px;
@@ -699,3 +699,6 @@ body, html {
 .fr-wrapper, .fr-toolbar {
   box-shadow: none !important;
   -webkit-box-shadow: none !important; }
+
+.show-placeholder + div {
+  text-indent: -1000px; }
