@@ -1,0 +1,7 @@
+<div class="message" ng-class="{'message--me': vm.me == vm.user}">
+    <div class="avatar message__avatar"><img src="img/avatar{{user}}.png"></div>  
+    <div class="message__text" ng-bind-html="text"></div>  
+    <div class="message__time">
+        {{vm.time}}
+    </div>   
+</div>

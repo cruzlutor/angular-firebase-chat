@@ -1,0 +1,55 @@
+<!-- <button ng-click="vm.open()">open chat</button> -->
+
+
+<div class="chat" ng-show="visible">
+
+    <div class="chat__wrapper">
+        <div class="chat__members">
+            <div ng-hide="user == 1" ng-click="switchChat(1)" class="avatar chat__members__avatar"><img src="img/avatar1.png"></div>   
+            <div ng-hide="user == 2" ng-click="switchChat(2)" class="avatar chat__members__avatar"><img src="img/avatar2.png"></div>   
+            <div ng-hide="user == 3" ng-click="switchChat(3)" class="avatar chat__members__avatar"><img src="img/avatar3.png"></div>   
+            <div ng-hide="user == 4" ng-click="switchChat(4)" class="avatar chat__members__avatar"><img src="img/avatar4.png"></div>   
+        </div>
+        
+        <div class="chat__window">
+            <h1 class="chat__title">
+                <span ng-show="!receiver">Seleccione un usuario</span>
+                <span ng-show="receiver">Responder a: {{users[receiver]}}</span>
+            </h1>
+            <button ng-click="close()" class="button button--green chat__close"><i class="fa fa-close"></i></button>
+
+            <div id="messages" class="chat__messages">
+                <message me="{{user}}" user="{{message.user}}" time="{{message.time}}" text="{{message.text}}" ng-repeat="message in messages"></message>
+            </div>
+
+            <div class="chat__write">
+                <textarea id="edit" class="chat__write__textarea"></textarea>
+                <div id="toolbar"></div>
+            </div>
+
+            <div class="chat__file">
+
+                 <div ng-show="!file.name">
+                    <button id="button-file" class="button button--blue is-uppercase pull-left"><i class="fa fa-file-text-o"></i> &nbsp; Adjuntar archivo</button>
+                    <input file-model='file' class="chat__file__input" id="file" type="file">
+                    <div class="chat__file__rules pull-left">
+                        <div>
+                            Los archivos deben pesar menos de <strong>2 MB</strong><br />
+                            Solo se permiten archivos <strong>.JPG, .PNG</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div ng-show="file.name">
+                    <button ng-click="removeFile()" class="button button--red chat__file__remove"><i class="fa fa-close"></i></button> 
+                    <div class="chat__file__preview"><i class="fa fa-file-text-o"></i> &nbsp; {{file.name}} test</div>
+                </div> 
+
+            </div>
+
+            <button ng-show="receiver" id="send" class="button button--green pull-right chat__send is-uppercase">Enviar</button>
+
+        </div>
+
+    </div>
+</div>

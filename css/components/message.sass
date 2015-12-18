@@ -1,0 +1,61 @@
+.message
+    overflow: hidden
+    position: relative
+    min-height: 50px
+    padding: 20px 20px 20px 120px
+
+    &--me
+        padding-left: 20px
+        padding-right: 120px
+
+    &--me &__text
+        background: #F5F9D4
+        &:after
+            border-color: transparent transparent transparent #F5F9D4
+            left: auto
+            right: -24px
+
+    &--me &__avatar
+        right: 16px
+        left: initial
+
+    &--me &__time
+        float: right
+
+    &__avatar
+        position: absolute
+        left: 16px
+
+    &__text
+        position: relative
+        border-radius: 5px
+        background: #F5F5F5
+        padding: 10px 16px
+        color: #888
+        line-height: 1.3rem
+        min-height: 40px
+        font-size: 0.9rem
+
+        &:after
+            content: ""
+            border-color: transparent #F5F5F5 transparent transparent
+            border-style: solid
+            border-width: 12px
+            position: absolute
+            top: 20px
+            left: -24px
+        
+
+    &__time
+        color: #3CBA7A
+        word-spacing: 1.5rem
+        padding: 10px 0
+
+
+@media (max-width: 1200px)
+    .message
+        padding-left: 100px
+        
+        &--me
+            padding-right: 100px
+            padding-left: 20px
